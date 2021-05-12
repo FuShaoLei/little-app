@@ -5,13 +5,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_poems"
+        android:text="查看随机诗词" />
+
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        app:tabIndicatorFullWidth="true"
-        app:tabIndicatorColor="@color/colorPrimary"
         app:tabGravity="fill"
+        app:tabIndicatorColor="@color/colorPrimary"
+        app:tabIndicatorFullWidth="true"
         app:tabMode="fixed" />
 
     <androidx.viewpager.widget.ViewPager

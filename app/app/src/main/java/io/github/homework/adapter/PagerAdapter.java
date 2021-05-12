@@ -1,7 +1,5 @@
 package io.github.homework.adapter;
 
-import android.util.Log;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -9,16 +7,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import java.util.List;
+import io.github.homework.module.CommonFragment;
 
-import io.github.homework.constant.Constant;
-import io.github.homework.module.SecondFragment;
-import io.github.homework.module.FirstFragment;
-
-/**
- * @Auther: fushaolei
- * @datetime: 2021/5/9
- * @desc:
- */
+ 
 public class PagerAdapter extends FragmentStatePagerAdapter {
     private List<String> title;
     private List<Integer> type;
@@ -32,7 +23,7 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        return FirstFragment.getInstance(type.get(position));
+        return CommonFragment.getInstance(type.get(position));
     }
 
     @Override

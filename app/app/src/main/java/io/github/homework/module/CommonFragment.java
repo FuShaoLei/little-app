@@ -14,7 +14,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import io.github.homework.R;
@@ -22,12 +21,7 @@ import io.github.homework.adapter.ListViewAdapter;
 import io.github.homework.database.MyDatabaseHelper;
 import io.github.homework.entity.Music;
 
-/**
- * @Auther: fushaolei
- * @datetime: 2021/5/9
- * @desc:
- */
-public class FirstFragment extends Fragment {
+public class CommonFragment extends Fragment {
     private final static String TYPE = "type";
     private View mView;
     private ListView listView;
@@ -39,7 +33,7 @@ public class FirstFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        mView = inflater.inflate(R.layout.frament_music, container, false);
+        mView = inflater.inflate(R.layout.frament_common, container, false);
         initData();
         initView();
         return mView;
@@ -74,8 +68,8 @@ public class FirstFragment extends Fragment {
         }
     }
 
-    public static FirstFragment getInstance(int type) {
-        FirstFragment fragment = new FirstFragment();
+    public static CommonFragment getInstance(int type) {
+        CommonFragment fragment = new CommonFragment();
         Bundle bundle = new Bundle();
         bundle.putInt(TYPE, type);
         fragment.setArguments(bundle);

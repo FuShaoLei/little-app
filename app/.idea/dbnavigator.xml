@@ -26,10 +26,10 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="0673e04f-a477-4956-89c7-214949699047">
-        <schema name="main" object-types="dataset trigger, view, column, table, constraint, index" />
+        <schema name="main" object-types="view, table" />
       </connection>
       <connection connection-id="7cdca2bd-acb9-49d6-8496-0b55cb22cdc3">
-        <schema name="main" object-types="dataset trigger, view, column, table, constraint, index" />
+        <schema name="main" object-types="view, table" />
       </connection>
     </loaded-nodes>
   </component>
@@ -42,9 +42,7 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="7cdca2bd-acb9-49d6-8496-0b55cb22cdc3" object-ref="schemas/main/tables/Music" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="0673e04f-a477-4956-89c7-214949699047" />

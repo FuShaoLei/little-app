@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -16,8 +19,11 @@ import io.github.homework.adapter.PagerAdapter;
 import io.github.homework.constant.Constant;
 import io.github.homework.database.MyDatabaseHelper;
 import io.github.homework.entity.Music;
+import io.github.homework.module.PoemsActivity;
 
 public class MainActivity extends AppCompatActivity {
+    private Button button_poems;
+
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
 
@@ -33,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
 
         initDatabase();
 
+        button_poems = findViewById(R.id.btn_poems);
+
         mTabLayout = findViewById(R.id.tab_layout);
         mViewPager = findViewById(R.id.view_pager);
 
@@ -44,6 +52,14 @@ public class MainActivity extends AppCompatActivity {
         typeList = new ArrayList<>();
         typeList.add(Constant.TYPE_FIRST);
         typeList.add(Constant.TYPE_SECOND);
+
+        button_poems.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PoemsActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         for (String name : titleList) {

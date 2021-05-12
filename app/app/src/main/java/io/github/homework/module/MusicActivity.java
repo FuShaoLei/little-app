@@ -19,11 +19,7 @@ import io.github.homework.constant.Constant;
 import io.github.homework.entity.Music;
 import io.github.homework.service.MusicService;
 
-/**
- * @Auther: fushaolei
- * @datetime: 2021/5/11
- * @desc:
- */
+
 public class MusicActivity extends AppCompatActivity {
     private Music music;
     private ImageView cover;
