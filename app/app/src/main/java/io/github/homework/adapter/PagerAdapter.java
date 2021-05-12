@@ -10,8 +10,9 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import java.util.List;
 
-import io.github.homework.module.MeFragment;
-import io.github.homework.module.MusicFragment;
+import io.github.homework.constant.Constant;
+import io.github.homework.module.SecondFragment;
+import io.github.homework.module.FirstFragment;
 
 /**
  * @Auther: fushaolei
@@ -24,6 +25,7 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
     public PagerAdapter(@NonNull FragmentManager fm, List<String> title) {
         super(fm);
         this.title = title;
+
     }
 
     @NonNull
@@ -33,11 +35,11 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
         String name = getPageTitle(position).toString();
         Fragment fragment = new Fragment();
         switch (name) {
-            case "音乐":
-                fragment = new MusicFragment();
+            case Constant.FIRST_NAME:
+                fragment = new FirstFragment();
                 break;
-            case "我的":
-                fragment = new MeFragment();
+            case Constant.SECOND_NAME:
+                fragment = new SecondFragment();
                 break;
         }
         return fragment;

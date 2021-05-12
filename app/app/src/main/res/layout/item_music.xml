@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp">
+
+    <TextView
+        android:id="@+id/music_number"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="18dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorSecond"
+        android:textSize="22dp"
+        tools:text="1" />
+
+    <TextView
+        android:id="@+id/music_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/music_number"
+        android:textColor="@color/colorText"
+        android:textSize="21dp"
+        tools:text="春夏秋冬" />
+
+    <TextView
+        android:layout_toRightOf="@id/music_number"
+        android:id="@+id/music_author"
+        android:textSize="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/music_name"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorSecond"
+        tools:text="张国荣" />
+
+</RelativeLayout>
