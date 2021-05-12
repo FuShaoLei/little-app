@@ -10,20 +10,31 @@ public class Music implements Serializable {
     private String author;
     private int cover;
     private int resource;//音频资源
+    private int type;
 
-    public Music(String name, String author, int cover, int resource) {
+    public Music(String name, String author, int cover, int resource, int type) {
         this.name = name;
         this.author = author;
         this.cover = cover;
         this.resource = resource;
+        this.type = type;
     }
 
-    public Music(int id, String name, String author, int cover, int resource) {
+    public Music(int id, String name, String author, int cover, int resource, int type) {
         this.id = id;
         this.name = name;
         this.author = author;
         this.cover = cover;
         this.resource = resource;
+        this.type = type;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 
     public int getId() {
@@ -74,6 +85,7 @@ public class Music implements Serializable {
                 ", author='" + author + '\'' +
                 ", cover=" + cover +
                 ", resource=" + resource +
+                ", type=" + type +
                 '}';
     }
 }

@@ -21,28 +21,18 @@ import io.github.homework.module.FirstFragment;
  */
 public class PagerAdapter extends FragmentStatePagerAdapter {
     private List<String> title;
+    private List<Integer> type;
 
-    public PagerAdapter(@NonNull FragmentManager fm, List<String> title) {
+    public PagerAdapter(@NonNull FragmentManager fm, List<String> title, List<Integer> type) {
         super(fm);
         this.title = title;
-
+        this.type = type;
     }
 
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        Log.d("==>", getPageTitle(position) + "");
-        String name = getPageTitle(position).toString();
-        Fragment fragment = new Fragment();
-        switch (name) {
-            case Constant.FIRST_NAME:
-                fragment = new FirstFragment();
-                break;
-            case Constant.SECOND_NAME:
-                fragment = new SecondFragment();
-                break;
-        }
-        return fragment;
+        return FirstFragment.getInstance(type.get(position));
     }
 
     @Override

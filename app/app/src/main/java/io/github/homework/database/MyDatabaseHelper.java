@@ -19,7 +19,8 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
             "    name text," +
             "    author text," +
             "    cover integer," +
-            "    resrouce integer" +
+            "    resrouce integer," +
+            "    type integer" +
             ")";
 
 

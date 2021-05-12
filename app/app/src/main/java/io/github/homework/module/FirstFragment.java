@@ -28,6 +28,7 @@ import io.github.homework.entity.Music;
  * @desc:
  */
 public class FirstFragment extends Fragment {
+    private final static String TYPE = "type";
     private View mView;
     private ListView listView;
     private ListViewAdapter adapter;
@@ -48,11 +49,14 @@ public class FirstFragment extends Fragment {
      * 从数据库中拿取数据
      */
     private void initData() {
+        Bundle bundle = getArguments();
+        int mType = bundle.getInt(TYPE, 0);
+        Log.d("==>", "type = " + mType);
         dataList = new ArrayList<>();
         MyDatabaseHelper dbHelper = new MyDatabaseHelper(getContext(), "MusicData.db", null, 1);
         // 查询数据
         SQLiteDatabase mSqlitedb = dbHelper.getWritableDatabase();
-        Cursor cursor = mSqlitedb.rawQuery("select * from Music", null);
+        Cursor cursor = mSqlitedb.rawQuery("select * from Music where type = ?", new String[]{mType + ""});
         if (cursor.moveToNext()) {
             do {
                 int id = cursor.getInt(cursor.getColumnIndex("id"));
@@ -60,13 +64,22 @@ public class FirstFragment extends Fragment {
                 String author = cursor.getString(cursor.getColumnIndex("author"));
                 int cover = cursor.getInt(cursor.getColumnIndex("cover"));
                 int resrouce = cursor.getInt(cursor.getColumnIndex("resrouce"));
-                dataList.add(new Music(id,name,author,cover,resrouce));
+                int type = cursor.getInt(cursor.getColumnIndex("type"));
+                dataList.add(new Music(id, name, author, cover, resrouce, type));
             } while (cursor.moveToNext());
         }
         cursor.close();
-        for (Music m:dataList){
-            Log.d("==>",m.toString());
+        for (Music m : dataList) {
+            Log.d("==>", m.toString());
         }
+    }
+
+    public static FirstFragment getInstance(int type) {
+        FirstFragment fragment = new FirstFragment();
+        Bundle bundle = new Bundle();
+        bundle.putInt(TYPE, type);
+        fragment.setArguments(bundle);
+        return fragment;
     }
 
     private void initView() {
