@@ -1,4 +1,4 @@
-# little-app练手项目
+# 练手项目
 
 - activity的跳转
 - 广播和服务
