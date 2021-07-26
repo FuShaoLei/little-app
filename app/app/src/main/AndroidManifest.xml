@@ -27,7 +27,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".module.MusicActivity"/>
-        <activity android:name=".module.PoemsActivity"/>
     </application>
 
 </manifest>
